@@ -1,0 +1,76 @@
+$orange:#DE5C46;
+$bgcolor:#F7F5F2;
+$grey-font:#707070;
+
+#contact-btn{
+  position: fixed;
+  bottom:150px;
+  right: 100px;
+
+
+}
+
+
+
+body{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  color: #707070;
+
+}
+
+
+.inner{
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  padding:0px 30px;
+}
+
+a{
+  text-decoration: none;
+  color:#000;
+}
+
+.text-orange{
+  color:#DE5C46;
+}
+
+
+
+
+
+
+//title
+.r-title{
+  text-align: center;
+  color: #707070;
+  padding-bottom: 50px;
+  padding-top: 50px;
+
+  h2{
+    
+    font-size: 1.75rem;
+    position: relative;
+   
+    &::before{
+    }
+  }//h2
+
+  .r-text{
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-size: 1.75rem;
+    line-height: 1.5em;
+  }
+
+  p{
+    font-size: 1rem;
+    line-height: 1.5em;
+  }
+}
+
+.marker{
+  background:linear-gradient(transparent 60%, #ed9d8f 60%);
+
+}

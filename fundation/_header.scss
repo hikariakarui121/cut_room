@@ -1,0 +1,50 @@
+header{
+  height: 100px;
+  position: fixed;
+  margin:0 auto;
+  width: 100%;
+  z-index: 100;
+
+  .inner{
+    display: flex;
+    justify-content: space-between;
+    line-height: 100px;
+    box-sizing: border-box;
+    position: relative;
+  
+
+    h1{
+      font-size: 1.5rem;
+    }
+
+    nav{
+   
+
+
+      ul{
+        display: flex;
+        
+
+        li{
+
+          &+li{
+            margin-left:20px;
+
+
+            
+          }
+
+          a{
+            font-size: 0.75rem;
+          }
+
+
+
+        }
+      }
+    }//nav
+
+
+
+  }//inner
+}//header

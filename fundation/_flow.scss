@@ -1,0 +1,26 @@
+#flow{
+  .inner{
+
+    .d-contents{
+      
+
+
+      .d-item{
+       
+
+        .d-item-text{
+          font-size: 1rem;
+        }
+
+
+        span{
+        
+          & + span{
+     
+          }
+        }
+
+      }//item
+    }
+}
+}

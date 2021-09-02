@@ -1,0 +1,50 @@
+#company{
+
+  background-color: $bgcolor;
+
+  .inner{
+    padding-bottom: 50px;
+
+    .r-title{
+
+      h2{
+
+      }
+    }
+
+    .company-concept{
+
+      background-color: #fff;
+      max-width: 1000px;
+      width: 100%;
+      margin: 0 auto;
+      border: 1px solid $grey-font;
+
+
+
+      tr{
+        border: 1px dashed #707070;
+        line-height: 100px;
+        font-size: 1.5em;
+
+        th{
+          padding: 0px 30px;
+       
+        }
+
+        td{
+          padding: 0px 30px;
+
+          li{
+            font-size: 1.25rem;
+          }
+        }
+      }
+    }
+
+
+
+
+  }
+
+}
