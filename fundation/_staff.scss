@@ -16,11 +16,16 @@
     .s-contents{
       padding-bottom: 120px;
 
-
       .s-item{
         display: flex;
         text-align: center;
         justify-content: center;
+        flex-direction: column;
+
+
+        @include MidTab{
+          flex-direction: row;
+        }
 
         & + div{
           padding-top: 100px;
@@ -29,22 +34,32 @@
 
         .s-item-image{
           position: relative;
+          display: inline-block;
 
           img{
             max-width: 420px;
             width: 100%;
+   
+
+            @include MidTab{
+              transform: translate(10%, 10%);
+            }
           }
 
 
           span{
             position: absolute;
+            z-index: 10;
             top: 0;
             left: 0;
             color: #fff;
             background-color: #60C3A3;
             font-size: 2.5rem;
-            // border-radius: 20%;
+            padding: 10px;
             
+            @include MidTab{
+              transform: translate(10%, 10%);
+            }
    
           }
         }//image
@@ -56,24 +71,36 @@
           max-width: 420px;
           width: 100%;
           box-sizing: border-box;
-          border-radius: 20px;
-          transform: translate(-20%, 20%);
+          margin: 0 auto;
+
+          @include MidTab{
+            transform: translate(-10%, 20%);
+            margin: 0;
+            border-radius: 20px;
+          }
        
       
 
           .s-item-title{
             padding-bottom: 20px;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             line-height: 1.5em;
             font-weight: bold;
-          
+            
+            @include MidTab{
+              font-size: 1.5rem;
+            }
 
           }
 
           .s-item-discription{
             text-align: left;
-            font-size: 1.1rem;
+            font-size: 1rem;
             line-height: 1.5em;
+
+            @include MidTab{
+              font-size: 1.1rem;
+            }
             
       
           }

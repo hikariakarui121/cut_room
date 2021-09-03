@@ -32,11 +32,19 @@
     .inner{
 
       .d-contents{
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: minmax(min-content,120px) minmax(min-content,120px)minmax(min-content,120px);
+        gap:20px;
+        justify-content: center;
         align-items: center;
         padding-bottom: 100px;
         padding-top: 100px;
+   
+
+        @include OverTab{
+          grid-template-columns: minmax(min-content,120px) minmax(min-content,120px)minmax(min-content,120px)minmax(min-content,120px)minmax(min-content,120px)minmax(min-content,120px)minmax(min-content,120px)minmax(min-content,120px)minmax(min-content,120px);
+          justify-content: space-between;
+        }
 
 
         .d-item{
@@ -56,11 +64,13 @@
 
 
           span{
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background-color:#000 ;
-            display: inline-block;
+            // width: 7px;
+            // height: 7px;
+            // border-radius: 50%;
+            // background-color:#000 ;
+            // display: inline-block;
+            font-weight: bold;
+            font-size: 3.5rem;
 
             & + span{
               margin-left: 7px;

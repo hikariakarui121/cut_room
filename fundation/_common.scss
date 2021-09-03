@@ -25,6 +25,7 @@ body{
   margin: 0 auto;
   width: 100%;
   padding:0px 30px;
+  box-sizing: border-box;
 }
 
 a{
@@ -34,6 +35,9 @@ a{
 
 .text-orange{
   color:#DE5C46;
+}
+.text-green{
+  color:#60C3A3;
 }
 
 
@@ -52,6 +56,8 @@ a{
     
     font-size: 1.75rem;
     position: relative;
+
+
    
     &::before{
     }
@@ -60,13 +66,21 @@ a{
   .r-text{
     padding-top: 50px;
     padding-bottom: 20px;
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     line-height: 1.5em;
+
+    @include MidTab{
+      font-size: 1.75rem;
+    }
   }
 
   p{
-    font-size: 1rem;
+    font-size: 0.75rem;
     line-height: 1.5em;
+
+    @include MidTab{
+      font-size: 1rem;
+    }
   }
 }
 

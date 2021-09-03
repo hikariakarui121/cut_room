@@ -4,30 +4,65 @@
 
   .inner{
     padding-bottom: 50px;
+    box-sizing: border-box;
 
- 
    
 
-    table{
+    .detail-contents{
       margin-bottom: 50px;
       background-color: #fff;
       width: 100%;
-      line-height: 60px;
+      line-height: 70px;
+      padding: 20px 0px;
+      font-size: 0.75rem;;
+
+      @include SmartTab{
+        font-size: 1rem;
+      }
+     
+
+     
 
       tr{        
-        padding-top: 100px;
+        padding-top: 40px;
+        display: flex;
+        flex-direction: column;
+        
+
+        &:last-child{
+          padding-bottom: 40px;
+        }
+      
+       
+
+        @include OverTab{
+          flex-direction: row;
+          align-items: center;
+        
+        }
 
        th{
         padding-left:30px;
         padding-right:30px;
+        text-align: left;
+     
+        @include OverTab{
+          width: 10%;
+        }
         }
 
         td{
           font-size: 1rem;
           line-height: 2em;
-          padding-left:50px;
-        }
+          padding-left:60px;
+          padding-right:30px;
+          font-size: 0.75rem;;
 
+          @include SmartTab{
+            font-size: 1rem;
+          }
+
+        }
       }
     }
 
@@ -35,4 +70,12 @@
   }
 
 
+}
+
+.detail-title{
+  text-align: center;
+  padding:20px 0px;
+  font-size: 1.25rem;
+  font-weight: bold;
+ 
 }

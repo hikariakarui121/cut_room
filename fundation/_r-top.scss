@@ -4,11 +4,12 @@
   box-sizing: border-box;
   background:url("./img/bg02.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-position: center;
 
     .inner{
       height: 100%;
       position: relative;
+
 
 
       h2{
@@ -20,6 +21,7 @@
         font-size: 2.5rem;
         line-height: 1.75em;
         display: inline-block;
+        
      
        
 
@@ -60,23 +62,37 @@
 
 
       img{
-        max-width:600px ;
+        max-width:400px ;
         width: 100%;
         border-radius: 20px;
+
+        @include MidTab{
+          max-width:600px ;
+        }
       }   
     }
 
     .sub-visual{
       position: absolute;
-      bottom: 50px;
-      left:100px;
+    
       z-index: 0;
+      top: 50%;
+      left:100px;
+
+      @include MidTab{
+        bottom: 50px;
+      left:100px;
+      }
 
 
       img{      
-        max-width:400px ;
+        max-width:300px ;
         width: 100%;
         border-radius: 20px;
+
+        @include MidTab{
+          max-width:400px ;
+        }
       }
     }
 
