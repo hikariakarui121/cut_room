@@ -6,50 +6,75 @@ header{
   z-index: 100;
 
   .inner{
+    line-height: 100px;
     display: flex;
     justify-content: space-between;
-    line-height: 100px;
     box-sizing: border-box;
     position: relative;
     align-items: center;
-
+    position: relative;
    
-  
-
     h1{
       font-size: 1.5rem;
     }
 
-    nav{
+    .navigation{
       display: none;
 
       @include OverTab{
         display: block;
       }
 
-
       ul{
         display: flex;
-        
 
         li{
-
           &+li{
             margin-left:20px;
-
-
-            
           }
+        a{
+          font-size: 0.75rem;
+          font-weight: bold;
+         }
+        }
+      }//ul
 
+
+      &.-active{
+        display: block;
+        position: fixed;
+        top:0;
+        right: 0;
+        bottom: 0;
+        width: 200px;
+        height: 100%;
+  
+        
+        text-align: left;
+        background-color: #F0ECEC;
+        padding-top: 100px;
+
+
+        ul{
+          flex-direction: column;
+
+          li{
+            padding-left: 10px;
+            border-bottom: 1px solid #000;
+            &+li{
+              margin-left:0px;
+            }
           a{
             font-size: 0.75rem;
+           }
           }
-
-
-
         }
       }
+
     }//nav
+
+
+
 
     button{
       display: block;

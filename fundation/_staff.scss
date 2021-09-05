@@ -60,8 +60,12 @@
             left: 0;
             color: #fff;
             background-color: #60C3A3;
-            font-size: 2.5rem;
+            font-size: 1.5rem;
             padding: 10px;
+
+            @include SmartTab{
+              font-size: 2.5rem;
+            }
             
             @include MidTab{
               transform: translate(10%, 10%);
