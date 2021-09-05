@@ -15,16 +15,22 @@
 
     .s-contents{
       padding-bottom: 120px;
+      text-align: center;
 
       .s-item{
-        display: flex;
-        text-align: center;
-        justify-content: center;
-        flex-direction: column;
+     
+        // text-align: center;
+        // justify-content: center;
+        // flex-direction: column;
+        display: inline-block;
+
 
 
         @include MidTab{
+          display: flex;
           flex-direction: row;
+          text-align: left;
+
         }
 
         & + div{
@@ -72,6 +78,7 @@
           width: 100%;
           box-sizing: border-box;
           margin: 0 auto;
+          // display: inline-block;
 
           @include MidTab{
             transform: translate(-10%, 20%);

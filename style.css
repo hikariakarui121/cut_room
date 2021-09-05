@@ -1,3 +1,4 @@
+@charset "UTF-8";
 header {
   height: 100px;
   position: fixed;
@@ -17,6 +18,9 @@ header .inner {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header .inner h1 {
@@ -47,14 +51,96 @@ header .inner nav ul li a {
   font-size: 0.75rem;
 }
 
+header .inner button {
+  display: block;
+  position: relative;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  font: inherit;
+  border: none;
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+}
+
+@media screen and (min-width: 1000px) {
+  header .inner button {
+    display: none;
+  }
+}
+
+header .inner button span {
+  display: block;
+  background-color: black;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+header .inner button span:first-child {
+  top: 0;
+}
+
+header .inner button span:nth-child(2) {
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+header .inner button span:last-child {
+  bottom: 0;
+}
+
+header .inner button.-active span {
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+header .inner button.-active span:first-child {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+header .inner button.-active span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+header .inner button.-active span:last-child {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
 #contact-btn {
   position: fixed;
-  bottom: 150px;
-  right: 100px;
+  bottom: 30px;
+  right: 30px;
+  z-index: 100;
+}
+
+#contact-btn img {
+  width: 100px;
+}
+
+@media screen and (min-width: 800px) {
+  #contact-btn {
+    bottom: 150px;
+    right: 60px;
+  }
+  #contact-btn img {
+    width: 100%;
+  }
 }
 
 body {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "游ゴシック", "YuGothic", "メイリオ", "Meiryo", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   color: #707070;
 }
@@ -123,13 +209,19 @@ a {
 }
 
 #r-top {
-  height: 800px;
+  height: 550px;
   padding-top: 100px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background: url("./img/bg02.png");
   background-repeat: no-repeat;
   background-position: center;
+}
+
+@media screen and (min-width: 600px) {
+  #r-top {
+    height: 800px;
+  }
 }
 
 #r-top .inner {
@@ -140,13 +232,30 @@ a {
 #r-top .inner h2 {
   position: relative;
   z-index: 10;
-  top: 35%;
-  left: 25%;
-  -webkit-transform: translate(-40%, -50%);
-          transform: translate(-40%, -50%);
-  font-size: 2.5rem;
-  line-height: 1.75em;
   display: inline-block;
+  font-size: 1.25rem;
+  line-height: 1.5em;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+@media screen and (min-width: 600px) {
+  #r-top .inner h2 {
+    top: 35%;
+    left: 25%;
+    -webkit-transform: translate(-40%, -50%);
+            transform: translate(-40%, -50%);
+  }
+}
+
+@media screen and (min-width: 800px) {
+  #r-top .inner h2 {
+    font-size: 2.5rem;
+    line-height: 1.75em;
+  }
 }
 
 #r-top .inner h2 .catch-top {
@@ -239,6 +348,10 @@ a {
   display: inline-block;
 }
 
+#r-about .inner .a-container .sub-title img {
+  width: 100%;
+}
+
 #r-about .inner .a-container .sub-title .sub-title-text {
   position: absolute;
   top: 25%;
@@ -251,22 +364,15 @@ a {
 }
 
 #r-about .inner .a-container .a-contents {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: minmax(min-content, 300px) minmax(min-content, 300px) minmax(min-content, 300px);
-      grid-template-columns: minmax(-webkit-min-content, 300px) minmax(-webkit-min-content, 300px) minmax(-webkit-min-content, 300px);
-      grid-template-columns: minmax(min-content, 300px) minmax(min-content, 300px) minmax(min-content, 300px);
-  gap: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding-top: 30px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-#r-about .inner .a-container .a-contents.seconds {
-  -ms-grid-columns: minmax(min-content, 300px) minmax(min-content, 300px);
-      grid-template-columns: minmax(-webkit-min-content, 300px) minmax(-webkit-min-content, 300px);
-      grid-template-columns: minmax(min-content, 300px) minmax(min-content, 300px);
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 #r-about .inner .a-container .a-contents .a-item {
@@ -277,23 +383,43 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  max-width: 450px;
+  width: 100%;
+  padding-bottom: 35px;
+}
+
+@media screen and (min-width: 600px) {
+  #r-about .inner .a-container .a-contents .a-item {
+    max-width: 290px;
+    padding: 10px;
+  }
 }
 
 #r-about .inner .a-container .a-contents .a-item .item-image img {
-  max-width: 300px;
   width: 100%;
   vertical-align: bottom;
+}
+
+@media screen and (min-width: 600px) {
+  #r-about .inner .a-container .a-contents .a-item .item-image img {
+    max-width: 300px;
+  }
 }
 
 #r-about .inner .a-container .a-contents .a-item .item-text {
   padding: 15px;
   border: 1px solid #707070;
   background-color: #fff;
+  height: 255px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 #r-about .inner .a-container .a-contents .a-item .item-text .item-title {
   font-size: 1.25rem;
+  line-height: 1.5em;
   padding-bottom: 20px;
+  font-weight: bold;
 }
 
 #r-about .inner .a-container .a-contents .a-item .item-text .item-discription {
@@ -309,28 +435,23 @@ a {
 
 #staff .inner .s-contents {
   padding-bottom: 120px;
+  text-align: center;
 }
 
 #staff .inner .s-contents .s-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  text-align: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  display: inline-block;
 }
 
 @media screen and (min-width: 800px) {
   #staff .inner .s-contents .s-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    text-align: left;
   }
 }
 
@@ -429,7 +550,7 @@ a {
 }
 
 #day .d-title .d-title-text {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   background-color: #fff;
   position: absolute;
   top: 50%;
@@ -439,14 +560,25 @@ a {
   padding: 20px;
   text-shadow: 2px 2px 2px black;
   font-weight: bold;
+  white-space: nowrap;
+}
+
+@media screen and (min-width: 480px) {
+  #day .d-title .d-title-text {
+    font-size: 1.75rem;
+  }
+}
+
+.inner {
+  padding-bottom: 50px;
 }
 
 .inner .d-contents {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: minmax(min-content, 120px) minmax(min-content, 120px) minmax(min-content, 120px);
-      grid-template-columns: minmax(-webkit-min-content, 120px) minmax(-webkit-min-content, 120px) minmax(-webkit-min-content, 120px);
-      grid-template-columns: minmax(min-content, 120px) minmax(min-content, 120px) minmax(min-content, 120px);
+  -ms-grid-columns: minmax(min-content, 120px) minmax(min-content, 120px);
+      grid-template-columns: minmax(-webkit-min-content, 120px) minmax(-webkit-min-content, 120px);
+      grid-template-columns: minmax(min-content, 120px) minmax(min-content, 120px);
   gap: 20px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -454,15 +586,15 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
   padding-top: 100px;
 }
 
 @media screen and (min-width: 1000px) {
   .inner .d-contents {
-    -ms-grid-columns: minmax(min-content, 120px) minmax(min-content, 120px) minmax(min-content, 120px) minmax(min-content, 120px) minmax(min-content, 120px) minmax(min-content, 120px) minmax(min-content, 120px) minmax(min-content, 120px) minmax(min-content, 120px);
-        grid-template-columns: minmax(-webkit-min-content, 120px) minmax(-webkit-min-content, 120px) minmax(-webkit-min-content, 120px) minmax(-webkit-min-content, 120px) minmax(-webkit-min-content, 120px) minmax(-webkit-min-content, 120px) minmax(-webkit-min-content, 120px) minmax(-webkit-min-content, 120px) minmax(-webkit-min-content, 120px);
-        grid-template-columns: minmax(min-content, 120px) minmax(min-content, 120px) minmax(min-content, 120px) minmax(min-content, 120px) minmax(min-content, 120px) minmax(min-content, 120px) minmax(min-content, 120px) minmax(min-content, 120px) minmax(min-content, 120px);
+    -ms-grid-columns: minmax(min-content, 120px) minmax(min-content, 120px) minmax(min-content, 120px) minmax(min-content, 120px) minmax(min-content, 120px) minmax(min-content, 120px) minmax(min-content, 120px);
+        grid-template-columns: minmax(-webkit-min-content, 120px) minmax(-webkit-min-content, 120px) minmax(-webkit-min-content, 120px) minmax(-webkit-min-content, 120px) minmax(-webkit-min-content, 120px) minmax(-webkit-min-content, 120px) minmax(-webkit-min-content, 120px);
+        grid-template-columns: minmax(min-content, 120px) minmax(min-content, 120px) minmax(min-content, 120px) minmax(min-content, 120px) minmax(min-content, 120px) minmax(min-content, 120px) minmax(min-content, 120px);
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -483,6 +615,12 @@ a {
   color: #fff;
 }
 
+.inner .d-contents .d-item .d-item-subtext {
+  font-size: 1.25rem;
+  padding-top: 15px;
+  font-weight: bold;
+}
+
 .inner .d-contents .d-item span {
   font-weight: bold;
   font-size: 3.5rem;
@@ -490,6 +628,30 @@ a {
 
 .inner .d-contents .d-item span + span {
   margin-left: 7px;
+}
+
+.inner .d-message {
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid black;
+  padding: 15px;
+}
+
+.inner .d-message li {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  list-style-position: inside;
+  padding-bottom: 10px;
+}
+
+.d-item.sp-none {
+  display: none;
+}
+
+@media screen and (min-width: 1000px) {
+  .d-item.sp-none {
+    display: block;
+  }
 }
 
 #company {
@@ -510,9 +672,9 @@ a {
 }
 
 #company .inner .company-concept tr {
-  border: 1px dashed #707070;
+  border-bottom: 1px dashed #707070;
   font-size: 0.75rem;
-  line-height: 70px;
+  line-height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -520,6 +682,10 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+#company .inner .company-concept tr:last-child {
+  border: none;
 }
 
 @media screen and (min-width: 600px) {
@@ -677,7 +843,9 @@ a {
   width: 80%;
   margin: 0 auto;
   margin-bottom: 50px;
-  padding: 20px 0px;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 #contact-form .inner .c-contents .c-text {
@@ -698,6 +866,10 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 80%;
   margin: 0 auto;
   -webkit-box-pack: center;
@@ -707,24 +879,48 @@ a {
   padding: 20px 0px;
 }
 
+@media screen and (min-width: 480px) {
+  #contact-form .inner .line-contents {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+#contact-form .inner .line-contents .line-image {
+  padding: 10px;
+}
+
 #contact-form .inner .line-contents .line-image img {
   width: 100px;
   height: 100px;
   border: 2px solid #60C386;
 }
 
-#contact-form .inner .line-contents .line-item {
-  padding-left: 50px;
+@media screen and (min-width: 480px) {
+  #contact-form .inner .line-contents .line-item {
+    padding-left: 30px;
+  }
 }
 
 #contact-form .inner .line-contents .line-item .line-text {
   padding-bottom: 15px;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 #contact-form .inner .line-contents .line-item .line-text span {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: bold;
+}
+
+@media screen and (min-width: 600px) {
+  #contact-form .inner .line-contents .line-item .line-text {
+    font-size: 1.25rem;
+  }
+  #contact-form .inner .line-contents .line-item .line-text span {
+    font-size: 1.5rem;
+  }
 }
 
 #contact-form .inner .line-contents .line-item .line-friends {
@@ -742,7 +938,7 @@ a {
 
 iframe .line-it-button {
   width: 200px;
-  height: 50px;
+  height: 80px;
   visibility: visible;
   position: static !important;
   opacity: 1 !important;

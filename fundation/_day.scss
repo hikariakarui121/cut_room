@@ -1,48 +1,54 @@
 #day{
 
 
-    .d-title{
-      text-align: center;
+        .d-title{
+          text-align: center;
+          background:url("./img/sample-image.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          height: 200px;
+          width: 100%;
+          position: relative;
 
-      background:url("./img/sample-image.jpg");
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 200px;
-      width: 100%;
-      position: relative;
+          .d-title-text{
+            font-size: 1.25rem; 
+            background-color: #fff;
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding:20px;
+            text-shadow: 2px 2px 2px black;
+            font-weight: bold;
+            white-space: nowrap;
 
-      .d-title-text{
-        font-size: 1.75rem;
-        background-color: #fff;
-        position: absolute;
-        top:50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding:20px;
-        text-shadow: 2px 2px 2px black;
-        font-weight: bold;
-      
+            @include SmartTab{
+              font-size: 1.75rem;
+            }
+          }
+          
+        }//title
 
-      }
-      
-    }
+  
+}//day
 
-  }
-    .inner{
+
+.inner{
+  padding-bottom: 50px;
 
       .d-contents{
         display: grid;
-        grid-template-columns: minmax(min-content,120px) minmax(min-content,120px)minmax(min-content,120px);
+        grid-template-columns: minmax(min-content,120px) minmax(min-content,120px);
         gap:20px;
         justify-content: center;
         align-items: center;
-        padding-bottom: 100px;
+        padding-bottom: 50px;
         padding-top: 100px;
    
 
         @include OverTab{
-          grid-template-columns: minmax(min-content,120px) minmax(min-content,120px)minmax(min-content,120px)minmax(min-content,120px)minmax(min-content,120px)minmax(min-content,120px)minmax(min-content,120px)minmax(min-content,120px)minmax(min-content,120px);
+          grid-template-columns: minmax(min-content,120px) minmax(min-content,120px)minmax(min-content,120px)minmax(min-content,120px)minmax(min-content,120px)minmax(min-content,120px)minmax(min-content,120px);
           justify-content: space-between;
         }
 
@@ -60,6 +66,14 @@
             border-radius: 50%;
             background-color: #60C3A3;
             color: #fff;
+    
+          }
+          .d-item-subtext{
+            
+            font-size: 1.25rem;
+            padding-top: 15px;
+            font-weight: bold;
+    
           }
 
 
@@ -78,5 +92,39 @@
           }
 
         }//item
+
+      }//contents
+
+    .d-message{
+      width: 80%;
+      margin: 0 auto;
+      border: 1px solid black;
+      padding: 15px;
+      
+      li{
+        font-size: 1rem;
+        line-height: 1.5rem;
+        list-style-position: inside;
+        padding-bottom: 10px;
       }
+    }
+
+    
+  }//inner
+
+
+  .font-big{
+
   }
+
+  .d-item.sp-none { 
+    display: none;
+
+    @include OverTab{
+      display: block;
+    }
+  }
+
+
+
+

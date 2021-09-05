@@ -1,10 +1,14 @@
 #r-top{
-  height: 800px;
+  height: 550px;
   padding-top: 100px;
   box-sizing: border-box;
   background:url("./img/bg02.png");
   background-repeat: no-repeat;
   background-position: center;
+
+  @include SmallTab{
+    height: 800px;
+  }
 
     .inner{
       height: 100%;
@@ -12,23 +16,37 @@
 
 
 
+
       h2{
         position: relative;
-        z-index: 10;
-        top: 35%;
-        left:25%;
-        transform: translate(-40%, -50%);
-        font-size: 2.5rem;
-        line-height: 1.75em;
+        z-index: 10;      
         display: inline-block;
-        
-     
-       
 
+        font-size: 1.25rem;
+        line-height: 1.5em;
+
+        top: 50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        white-space: nowrap;
+  
+
+        @include SmallTab{
+          top: 35%;
+          left:25%;
+          transform: translate(-40%, -50%);
+        }
+
+        @include MidTab{
+
+          font-size: 2.5rem;
+          line-height: 1.75em;
+        }
+        
     
   
         .catch-top{
-         background-color: #fff;
+          background-color: #fff;
           padding:0 20px;
           display: inline-block;
           box-shadow: 10px 5px 5px $grey-font;

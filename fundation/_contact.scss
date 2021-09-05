@@ -20,11 +20,13 @@
       width: 80%;
       margin: 0 auto;
       margin-bottom: 50px;
-      padding:20px 0px;
+      padding:20px;
+      box-sizing: border-box;
 
       .c-text{
         font-size: 1.25rem;
         padding-bottom: 30px;
+        
       }
       .c-item{
         font-size: 1.5rem;
@@ -37,19 +39,25 @@
       display: flex;
       text-align: center;
       align-items: center;
-    
+      flex-direction: column;
+
       width: 80%;
       margin: 0 auto;
       justify-content: center;
       border:2px solid #60C386;
       padding:20px 0px;
 
-      .line-image{
+      @include SmartTab{
+        flex-direction: row;
+      }
 
+      .line-image{
+        padding: 10px;
         img{
           width: 100px;
           height: 100px;
           border:2px solid #60C386;
+     
         }
 
 
@@ -57,18 +65,29 @@
 
 
       .line-item{
-        padding-left: 50px;
+       
+
+        @include SmartTab{
+          padding-left: 30px;
+        }
 
         .line-text{
           padding-bottom: 15px;
-          font-size: 1.25rem;
+          font-size: 1rem;
 
           span{
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: bold;
           }
 
+          @include SmallTab{
+            font-size: 1.25rem;
 
+            span{
+              font-size: 1.5rem;
+            }
+          }
+       
         }//text
 
        
@@ -102,7 +121,7 @@ iframe{
 
   .line-it-button{
     width: 200px; 
-    height: 50px; 
+    height: 80px; 
     visibility: visible; 
     position:static !important; 
     opacity:1 !important

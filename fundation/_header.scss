@@ -11,6 +11,7 @@ header{
     line-height: 100px;
     box-sizing: border-box;
     position: relative;
+    align-items: center;
 
    
   
@@ -49,6 +50,70 @@ header{
         }
       }
     }//nav
+
+    button{
+      display: block;
+      position: relative;
+      appearance: none;
+      outline: none;
+      font:inherit;
+      border: none;
+      background-color: transparent;
+      width:30px;
+      height:30px;
+
+
+      @include OverTab{
+        display: none;
+      }
+
+      span{
+        display: block;
+        background-color: black;
+        height:  2px;
+        width: 100%;
+        position:absolute;
+        transition: 0.3s ease;
+  
+
+        &:first-child{
+          top:0;
+        }
+        &:nth-child(2){
+          top:0;
+          bottom: 0;
+          margin: auto;
+        }
+        &:last-child{
+          bottom:0;
+        }
+    
+      }
+
+      &.-active{
+
+        span{
+          top:0;
+          bottom: 0;
+          margin: auto;
+          transition: 0.3s ease;
+    
+          &:first-child{
+           transform: rotate(45deg);
+          }
+          &:nth-child(2){
+            transform: rotate(45deg);
+          }
+          &:last-child{
+            transform: rotate(-45deg);
+          }
+        }
+    
+      }
+
+  
+
+    }
 
 
 

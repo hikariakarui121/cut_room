@@ -4,19 +4,33 @@ $grey-font:#707070;
 
 #contact-btn{
   position: fixed;
-  bottom:150px;
-  right: 100px;
+  bottom:30px;
+  right: 30px;
+  z-index: 100;
 
+  img{
+    width: 100px;
+  }
 
+  @include MidTab{
+    bottom:150px;
+    right: 60px;
+
+    img{
+      width: 100%;
+    }
+
+  
+  }
 }
 
 
 
 body{
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "游ゴシック", "YuGothic", "メイリオ", "Meiryo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  ;
   font-size: 16px;
   color: #707070;
-
 }
 
 

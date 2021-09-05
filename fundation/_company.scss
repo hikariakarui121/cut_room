@@ -23,11 +23,15 @@
 
 
       tr{
-        border: 1px dashed #707070;
+        border-bottom: 1px dashed #707070;
         font-size: 0.75rem;
-        line-height: 70px;
+        line-height: 50px;
         display: flex;
         flex-direction: column;
+
+        &:last-child{
+          border:none;
+        }
 
         @include SmallTab{
           font-size: 1em;
